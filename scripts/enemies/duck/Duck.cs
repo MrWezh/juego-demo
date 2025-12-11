@@ -19,14 +19,14 @@ namespace Game.Characters.Enemies
 
         public override void _PhysicsProcess(double delta)
         {
-          MoveAndSlide();
-            
+          if (MoveAndSlide()) {
                 for (int i = 0; i < GetSlideCollisionCount(); ++i)
                 {
                     KinematicCollision2D collision = GetSlideCollision(i);
                     if (collision.GetCollider().GetType() == typeof(MainCharacter))
                         ((MainCharacter)collision.GetCollider()).Kill();
                 } 
+          }
 
         }
 

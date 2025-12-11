@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://dcw8knmx7v6ln"]
+[gd_scene load_steps=9 format=4 uid="uid://dcw8knmx7v6ln"]
 
 [ext_resource type="Texture2D" uid="uid://ce0wxnymgi72b" path="res://assets/scenes/Blue.png" id="1_3lgah"]
 [ext_resource type="Texture2D" uid="uid://bd8o87jeswbfw" path="res://assets/scenes/Terrain (16x16).png" id="2_kyerx"]
 [ext_resource type="PackedScene" uid="uid://blgacavtwawlq" path="res://scenes/main_character.tscn" id="3_k1lrn"]
 [ext_resource type="PackedScene" uid="uid://cf2drilo2xty0" path="res://scenes/traps/saw.tscn" id="4_3lgah"]
 [ext_resource type="PackedScene" uid="uid://cwaahcc5t1cd2" path="res://scenes/enemies/duck.tscn" id="5_kyerx"]
+[ext_resource type="PackedScene" uid="uid://ces58do5cbgwp" path="res://scenes/menu.tscn" id="6_k1lrn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ifgyv"]
 texture = ExtResource("2_kyerx")
@@ -200,9 +201,12 @@ tile_set = SubResource("TileSet_gf3oj")
 
 [node name="MainCharacter" parent="." groups=["MainCharacterGroup"] instance=ExtResource("3_k1lrn")]
 position = Vector2(293, 376)
+collision_mask = 10
 
 [node name="Saw" parent="." groups=["TrapsGroup"] instance=ExtResource("4_3lgah")]
 position = Vector2(742, 517)
 
 [node name="Duck" parent="." groups=["EnemiesGroup"] instance=ExtResource("5_kyerx")]
 position = Vector2(484, 387.00003)
+
+[node name="Menu" parent="." instance=ExtResource("6_k1lrn")]

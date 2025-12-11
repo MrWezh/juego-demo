@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://ces58do5cbgwp"]
+
+[ext_resource type="Texture2D" uid="uid://pyu3qe6aejk8" path="res://scripts/paisajePixelArt.webp" id="1_yqeox"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 28.725002
+anchor_bottom = 16.175001
+offset_left = 9.0
+offset_top = 5.0
+offset_right = -0.00012207031
+offset_bottom = -6.1035156e-05
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yqeox")

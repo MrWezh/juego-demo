@@ -56,6 +56,7 @@ public partial class MainCharacter : CharacterBody2D
 
     public void Kill()
     {
+        GD.PushWarning("Me matan");
         stateMachine.TransitionTo("DieMovementState");
     }
 	public void SetAnimation(string animation)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://blgacavtwawlq"]
+[gd_scene load_steps=53 format=3 uid="uid://blgacavtwawlq"]
 
 [ext_resource type="Texture2D" uid="uid://jjfh7gg4uc87" path="res://assets/character/Jump (32x32).png" id="1_nrcqd"]
 [ext_resource type="Script" uid="uid://vb5amv5ombd0" path="res://scripts/mainCharacter/MainCharacter.cs" id="1_tqm6u"]
@@ -10,7 +10,6 @@
 [ext_resource type="Script" uid="uid://ncsrtqcwmq8b" path="res://scripts/state/mainCharacterState/IdleMovementState.cs" id="6_0ltrl"]
 [ext_resource type="Script" uid="uid://ddw77dlytmltc" path="res://scripts/state/StateMachine.cs" id="6_kvjf6"]
 [ext_resource type="Script" uid="uid://d0j4ce7p20oa7" path="res://scripts/state/mainCharacterState/RunningMovementState.cs" id="7_kvjf6"]
-[ext_resource type="Script" uid="uid://b02ie8tc76o6l" path="res://scripts/mainCharacter/PlayerCollision.cs" id="7_qoi8n"]
 [ext_resource type="Script" uid="uid://cnv42n37an5ru" path="res://scripts/state/mainCharacterState/FallingMovementState.cs" id="8_hj3w6"]
 [ext_resource type="Script" uid="uid://cmnterob2hqca" path="res://scripts/state/mainCharacterState/JumpingMovementState.cs" id="9_hodpe"]
 [ext_resource type="Script" uid="uid://c7mcfhmbko1rq" path="res://scripts/state/mainCharacterState/DoubleJumpingMovementState.cs" id="12_hodpe"]
@@ -329,7 +328,6 @@ frame_progress = 1.0
 position = Vector2(3, 7)
 scale = Vector2(3, 3)
 shape = SubResource("CapsuleShape2D_ig48j")
-script = ExtResource("7_qoi8n")
 
 [node name="MovementStateMachine" type="Node" parent="."]
 script = ExtResource("6_kvjf6")
