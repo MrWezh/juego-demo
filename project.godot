@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="juegoDemo"
-run/main_scene="uid://dcw8knmx7v6ln"
+run/main_scene="uid://ces58do5cbgwp"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="res://assets/scenes/icon.svg"
 
