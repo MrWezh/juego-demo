@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cwaahcc5t1cd2"]
+[gd_scene load_steps=35 format=3 uid="uid://cwaahcc5t1cd2"]
 
 [ext_resource type="Texture2D" uid="uid://b3xap1meto0yk" path="res://assets/enemies/dug/Hit (36x36).png" id="1_3sq7w"]
 [ext_resource type="Script" uid="uid://crf1bitn1foyk" path="res://scripts/enemies/duck/Duck.cs" id="1_jx74s"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://ddw77dlytmltc" path="res://scripts/state/StateMachine.cs" id="7_oo4l6"]
 [ext_resource type="Script" uid="uid://bhb8u1yy5lxjo" path="res://scripts/state/duckState/DuckFallingMovementState.cs" id="8_bg5gs"]
 [ext_resource type="Script" uid="uid://ds2ududqb2h1x" path="res://scripts/state/duckState/DuckJumpingMovementState.cs" id="10_4c0c5"]
+[ext_resource type="Script" uid="uid://cxrfn7lrp6dfl" path="res://scripts/state/duckState/DuckDieMovementState.cs" id="11_sb7mn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4c0c5"]
 atlas = ExtResource("4_bg5gs")
@@ -183,6 +184,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4c0c5"]
 size = Vector2(104, 78.333336)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ham1u"]
+size = Vector2(14, 3.5)
+
 [node name="Duck" type="CharacterBody2D"]
 texture_filter = 1
 scale = Vector2(3, 3)
@@ -192,7 +196,7 @@ script = ExtResource("1_jx74s")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jcd7b")
-animation = &"before_jump"
+animation = &"die"
 autoplay = "idle"
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
@@ -213,12 +217,23 @@ script = ExtResource("8_bg5gs")
 [node name="DuckJumpingMovementState" type="Node" parent="DuckMovementState"]
 script = ExtResource("10_4c0c5")
 
-[node name="JumpDetect" type="Area2D" parent="."]
+[node name="DuckDieMovementState" type="Node" parent="DuckMovementState"]
+script = ExtResource("11_sb7mn")
 
-[node name="JumpArea" type="CollisionShape2D" parent="JumpDetect"]
+[node name="JumpDetecter" type="Area2D" parent="."]
+
+[node name="JumpArea" type="CollisionShape2D" parent="JumpDetecter"]
 position = Vector2(-58, -7)
 shape = SubResource("RectangleShape2D_4c0c5")
 debug_color = Color(0.9745744, 0, 0.4292317, 0.41960785)
 
-[connection signal="body_entered" from="JumpDetect" to="." method="_on_jump_detected_body_entered"]
-[connection signal="body_exited" from="JumpDetect" to="." method="_on_jump_detected_body_exited"]
+[node name="KillArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillArea"]
+position = Vector2(-1.6666667, -10.25)
+shape = SubResource("RectangleShape2D_ham1u")
+debug_color = Color(0.098661564, 0.64277667, 0.25762677, 0.41960785)
+
+[connection signal="body_entered" from="JumpDetecter" to="." method="_on_jump_detected_body_entered"]
+[connection signal="body_exited" from="JumpDetecter" to="." method="_on_jump_detected_body_exited"]
+[connection signal="body_entered" from="KillArea" to="." method="_on_kill_area_body_entered"]

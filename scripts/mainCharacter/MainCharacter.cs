@@ -54,6 +54,8 @@ public partial class MainCharacter : CharacterBody2D
 
     }
 
+    
+
     public void Kill()
     {
         GD.PushWarning("Me matan");

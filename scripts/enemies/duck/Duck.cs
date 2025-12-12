@@ -9,6 +9,8 @@ namespace Game.Characters.Enemies
 
         private float jumpVelocity = -300.0f;
 
+     [Signal] public delegate void KilledEventHandler();
+
         public override void _Ready()
         {
             _sprite = GetNode<AnimatedSprite2D>("Sprite");
@@ -67,6 +69,18 @@ namespace Game.Characters.Enemies
             {
                  ((MainCharacter)body).Jumped -= OnPlayerJumped;
             }
+        }
+
+        public void _on_kill_area_body_entered(Node2D body)
+        {
+
+            if (body.GetType() == typeof(MainCharacter))
+            {
+                stateMachine.TransitionTo("DuckDieMovementState");
+
+            }
+            EmitSignal("Killed"); 
+            
         }
 
     }
