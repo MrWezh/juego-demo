@@ -7,11 +7,12 @@ public partial class DuckDieMovementState : State
 {
 
 	private Duck _duck;
-	private AnimatedSprite2D _sprite;
-
+    
+    private AnimatedSprite2D sprite;
     public override void Ready()
     {
         _duck = GetParent().GetParent<Duck>();
+        sprite = _duck.GetSprite();
     }
 
 	    public override void Enter()
@@ -32,11 +33,9 @@ public partial class DuckDieMovementState : State
     {
         if (_duck == null) return;
 
-		_sprite = GetParent().GetNode<AnimatedSprite2D>("Sprite");
-
-		if (_sprite != null)
+		if (sprite != null)
         {
-            await ToSignal(_sprite, "animation_Finished");
+            await ToSignal(sprite, "animation_Finished");
         } else
 		await ToSignal(GetTree().CreateTimer(0.5f), "timeout");
 

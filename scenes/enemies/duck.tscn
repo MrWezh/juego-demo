@@ -187,7 +187,7 @@ size = Vector2(104, 78.333336)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ham1u"]
 size = Vector2(14, 3.5)
 
-[node name="Duck" type="CharacterBody2D"]
+[node name="Duck" type="CharacterBody2D" groups=["duckGroup"]]
 texture_filter = 1
 scale = Vector2(3, 3)
 collision_layer = 8

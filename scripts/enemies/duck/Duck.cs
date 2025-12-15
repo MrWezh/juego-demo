@@ -32,6 +32,10 @@ namespace Game.Characters.Enemies
 
         }
 
+        public AnimatedSprite2D GetSprite()
+        {
+            return _sprite;         
+        }
         public float GetJumpVelocity()
         {
             return jumpVelocity;
