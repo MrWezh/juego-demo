@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://qxj28vfpsbfh"]
+[gd_scene load_steps=9 format=4 uid="uid://qxj28vfpsbfh"]
 
 [ext_resource type="Texture2D" uid="uid://ce0wxnymgi72b" path="res://assets/scenes/Blue.png" id="1_3lgah"]
 [ext_resource type="Texture2D" uid="uid://bd8o87jeswbfw" path="res://assets/scenes/Terrain (16x16).png" id="2_kyerx"]
 [ext_resource type="PackedScene" uid="uid://blgacavtwawlq" path="res://scenes/main_character.tscn" id="3_k1lrn"]
 [ext_resource type="PackedScene" uid="uid://cf2drilo2xty0" path="res://scenes/traps/saw.tscn" id="4_3lgah"]
 [ext_resource type="PackedScene" uid="uid://cwaahcc5t1cd2" path="res://scenes/enemies/duck.tscn" id="5_kyerx"]
+[ext_resource type="PackedScene" uid="uid://dr7m6jiu24p2e" path="res://scenes/portal.tscn" id="6_k1lrn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ifgyv"]
 texture = ExtResource("2_kyerx")
@@ -207,3 +208,6 @@ position = Vector2(742, 517)
 
 [node name="Duck" parent="." groups=["EnemiesGroup"] instance=ExtResource("5_kyerx")]
 position = Vector2(484, 387.00003)
+
+[node name="Portal" parent="." instance=ExtResource("6_k1lrn")]
+position = Vector2(1047, 502)

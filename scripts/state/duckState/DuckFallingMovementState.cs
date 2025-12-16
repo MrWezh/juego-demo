@@ -29,6 +29,7 @@ public partial class DuckFallingMovementState : State
 
     public override void UpdatePhysics(double delta)
     {
+        _duck.KillPlayer();
 
         Vector2 velocity = _duck.Velocity;
         if (!_duck.IsOnFloor())

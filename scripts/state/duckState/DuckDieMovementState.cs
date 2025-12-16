@@ -22,9 +22,6 @@ public partial class DuckDieMovementState : State
 		_duck.Velocity = Vector2.Zero;
 		_duck.SetPhysicsProcess(false);
 
-		_duck.CollisionLayer = 0;
-		_duck.CollisionMask = 0;
-
 		_ = RemoveAfterAnimation();
 
     }

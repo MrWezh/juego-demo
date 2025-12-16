@@ -21,17 +21,29 @@ namespace Game.Characters.Enemies
 
         public override void _PhysicsProcess(double delta)
         {
-          if (MoveAndSlide()) {
-                for (int i = 0; i < GetSlideCollisionCount(); ++i)
-                {
-                    KinematicCollision2D collision = GetSlideCollision(i);
-                    if (collision.GetCollider().GetType() == typeof(MainCharacter))
-                        ((MainCharacter)collision.GetCollider()).Kill();
-                } 
-          }
-
+            KillPlayer();
         }
 
+        public void KillPlayer()
+        {
+              // Mover primero
+            MoveAndSlide();
+
+            // Revisar colisiones resultantes
+            for (int i = 0; i < GetSlideCollisionCount(); ++i)
+            {
+                var collision = GetSlideCollision(i);
+                if (collision == null) continue;
+
+                var collider = collision.GetCollider();
+                if (collider is MainCharacter player)
+                {
+                        player.Kill();
+                    }
+                }
+            
+        }
+        
         public AnimatedSprite2D GetSprite()
         {
             return _sprite;         
@@ -80,6 +92,8 @@ namespace Game.Characters.Enemies
 
             if (body.GetType() == typeof(MainCharacter))
             {
+                CollisionLayer = 0;
+		        CollisionMask = 0;
                 stateMachine.TransitionTo("DuckDieMovementState");
 
             }

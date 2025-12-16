@@ -12,7 +12,6 @@ public partial class DuckIdleMovementState : State
     }
     public override void Enter()
     {
-		GD.Print("Hola soy pato");
         _duck.SetAnimation("idle");
     }
 
@@ -21,8 +20,10 @@ public partial class DuckIdleMovementState : State
     }
 
 	public override void UpdatePhysics(double delta)
-	{
-	}
+    {
+        _duck.KillPlayer();
+        
+    }
     public override void HandleInput(InputEvent @event)
     {
     }

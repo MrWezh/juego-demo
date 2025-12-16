@@ -123,7 +123,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_it60g")
 }],
-"loop": true,
+"loop": false,
 "name": &"die",
 "speed": 15.0
 }, {
@@ -198,6 +198,8 @@ script = ExtResource("1_jx74s")
 sprite_frames = SubResource("SpriteFrames_jcd7b")
 animation = &"die"
 autoplay = "idle"
+frame = 4
+frame_progress = 1.0
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
 position = Vector2(-0.6666667, 4)

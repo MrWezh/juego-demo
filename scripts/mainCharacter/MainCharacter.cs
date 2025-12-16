@@ -4,7 +4,7 @@ using Godot;
 public partial class MainCharacter : CharacterBody2D
 {
 	private const float Speed = 200.0f;
-	private const float JumpVelocity = -400.0f;
+	private const float JumpVelocity = -450.0f;
 
 	private bool doubleJump = true;
 

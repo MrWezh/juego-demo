@@ -26,6 +26,8 @@ public partial class DuckJumpingMovementState : State
 
     public override void UpdatePhysics(double delta)
     {
+
+        _duck.KillPlayer();
         
         Godot.Vector2 velocity = _duck.Velocity;
 
