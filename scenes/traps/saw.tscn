@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cf2drilo2xty0"]
 
 [ext_resource type="Script" uid="uid://ds3cm2srba8nf" path="res://scripts/traps/Saw.cs" id="1_hd0mb"]
-[ext_resource type="Texture2D" uid="uid://y0vdcibo2yso" path="res://assets/trampas/sierra.png" id="1_maawh"]
+[ext_resource type="Texture2D" uid="uid://k21wrtbgqgty" path="res://assets/trampas/shuriken_godot.png" id="2_maawh"]
 [ext_resource type="Script" uid="uid://d30paonn3o7ky" path="res://scripts/traps/saw_sprite.gd" id="3_maawh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ba3jf"]
@@ -11,8 +11,8 @@ collision_layer = 4
 script = ExtResource("1_hd0mb")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_maawh")
+scale = Vector2(0.43, 0.43)
+texture = ExtResource("2_maawh")
 script = ExtResource("3_maawh")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
