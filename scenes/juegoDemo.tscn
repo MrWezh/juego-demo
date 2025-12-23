@@ -200,8 +200,12 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAMAAUAAAAAAAEAAAAPAAUAAAAAAAIAAAAPAAU
 tile_set = SubResource("TileSet_gf3oj")
 
 [node name="MainCharacter" parent="." groups=["MainCharacterGroup"] instance=ExtResource("3_k1lrn")]
-position = Vector2(293, 376)
+position = Vector2(198, 507)
 collision_mask = 10
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MainCharacter"]
+position = Vector2(100, 0)
+remote_path = NodePath("../../Camera2D")
 
 [node name="Saw" parent="." groups=["TrapsGroup"] instance=ExtResource("4_3lgah")]
 position = Vector2(742, 517)
@@ -211,3 +215,7 @@ position = Vector2(625, 391.00003)
 
 [node name="Portal" parent="." instance=ExtResource("6_k1lrn")]
 position = Vector2(1047, 502)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(298, 507)
+zoom = Vector2(1.5, 1.5)

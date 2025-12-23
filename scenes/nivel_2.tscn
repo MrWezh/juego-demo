@@ -226,6 +226,10 @@ tile_set = SubResource("TileSet_j7cpi")
 position = Vector2(63, 553)
 collision_mask = 10
 
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MainCharacter"]
+position = Vector2(100, 0)
+remote_path = NodePath("../../Camera2D")
+
 [node name="Saw" parent="." groups=["TrapsGroup"] instance=ExtResource("4_j7cpi")]
 position = Vector2(814, 558)
 
@@ -246,3 +250,7 @@ position = Vector2(1059, 527)
 
 [node name="Saw4" parent="." groups=["TrapsGroup"] instance=ExtResource("4_j7cpi")]
 position = Vector2(430, 560)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(163, 553)
+zoom = Vector2(1.5, 1.5)
